@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "e363f213-b264-43c1-800c-aa07599002e5",
+		"name": "csv-to-json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19532758"
+	},
+	"item": [
+		{
+			"name": "CSVtoJSON",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "separator",
+						"value": "comma",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "csv",
+							"type": "file",
+							"src": "/D:/Project/Abhi/quiz-app/backend/Book1.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://scpcsvtojson-env-1.eba-nxqvedsm.us-east-1.elasticbeanstalk.com/api/convert",
+					"protocol": "http",
+					"host": [
+						"scpcsvtojson-env-1",
+						"eba-nxqvedsm",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"convert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store Category DB",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODA3MDg0MTIsImZpcnN0TmFtZSI6ImFiaGlzaGVrIiwibGFzdE5hbWUiOiJtIiwidXNlcklkIjoiYWJoaUBnbWFpbC5jb20ifQ.lZ5vBJwwcZRUZCCS3FiGWrX_fmQxlv2VUvUTALRIb8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoryName\": \"Test3\",\r\n    \"data\": [\r\n        {\r\n            \"Answer\": \"Vatican City\",\r\n            \"Option 1\": \"Monaco\",\r\n            \"Option 2\": \"Nauru\",\r\n            \"Option 3\": \"Vatican City\",\r\n            \"Option 4\": \"Liechtenstein\",\r\n            \"Question\": \"What is the smallest country in the world by land area?\",\r\n            \"Sr.no\": \"1\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://scpcsvtojson-env-1.eba-nxqvedsm.us-east-1.elasticbeanstalk.com/api/store-category",
+					"protocol": "http",
+					"host": [
+						"scpcsvtojson-env-1",
+						"eba-nxqvedsm",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"store-category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Category DB",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODA2ODU1MTgsImZpcnN0TmFtZSI6IlJ1c2hpIiwibGFzdE5hbWUiOiJQIiwidXNlcklkIjoicnVzaGlwQGdtYWlsLmNvbSJ9.BVPf-hxb90GAEkxUO2sVbDjh78UUHantas_kzkqclHI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://scpcsvtojson-env-1.eba-nxqvedsm.us-east-1.elasticbeanstalk.com/api/delete-category/Test",
+					"protocol": "http",
+					"host": [
+						"scpcsvtojson-env-1",
+						"eba-nxqvedsm",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"delete-category",
+						"Test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Categories DB",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODA3MDg0MTIsImZpcnN0TmFtZSI6ImFiaGlzaGVrIiwibGFzdE5hbWUiOiJtIiwidXNlcklkIjoiYWJoaUBnbWFpbC5jb20ifQ.lZ5vBJwwcZRUZCCS3FiGWrX_fmQxlv2VUvUTALRIb8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://scpcsvtojson-env-1.eba-nxqvedsm.us-east-1.elasticbeanstalk.com/api/get-categories",
+					"protocol": "http",
+					"host": [
+						"scpcsvtojson-env-1",
+						"eba-nxqvedsm",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"get-categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://scpcsvtojson-env-1.eba-nxqvedsm.us-east-1.elasticbeanstalk.com/api/health",
+					"protocol": "http",
+					"host": [
+						"scpcsvtojson-env-1",
+						"eba-nxqvedsm",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Rushi\",\r\n    \"lastName\": \"P\",\r\n    \"email\": \"ruship@gmail.com\",\r\n    \"password\": \"test12@#\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://scpcsvtojson-env-1.eba-nxqvedsm.us-east-1.elasticbeanstalk.com/api/registration",
+					"protocol": "http",
+					"host": [
+						"scpcsvtojson-env-1",
+						"eba-nxqvedsm",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ruship@gmail.com\",\r\n    \"password\": \"test12@#\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://scpcsvtojson-env-1.eba-nxqvedsm.us-east-1.elasticbeanstalk.com/api/signin",
+					"protocol": "http",
+					"host": [
+						"scpcsvtojson-env-1",
+						"eba-nxqvedsm",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
