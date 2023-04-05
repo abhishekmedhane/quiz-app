@@ -1,0 +1,1 @@
+make: bash build.sh
